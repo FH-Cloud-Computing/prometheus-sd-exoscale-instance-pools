@@ -10,6 +10,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"strconv"
 	"syscall"
 	"time"
 )
@@ -56,6 +57,7 @@ func main() {
 	exoscaleApiKey := ""
 	exoscaleApiSecret := ""
 	prometheusFile := "/var/run/prometheus-sd-exoscale-instance-pools/config.json"
+	prometheusPort := 9100
 	flag.StringVar(
 		&instancePoolId,
 		"instance-pool-id",
@@ -92,6 +94,12 @@ func main() {
 		prometheusFile,
 		"Static service discovery file for Prometheus",
 	)
+	flag.IntVar(
+		&prometheusPort,
+		"prometheus-port",
+		prometheusPort,
+		"Port the metrics service runs on",
+	)
 	flag.Parse()
 
 	zoneId, err := egoscale.ParseUUID(exoscaleZoneId)
@@ -113,8 +121,13 @@ func main() {
 			log.Fatalf("failed to fetch instance pool IPs, crashing out (%v)", err)
 		}
 
+		var targets []string
+		for _, ip := range ips {
+			targets = append(targets, ip + ":" + strconv.Itoa(prometheusPort))
+		}
+
 		config := StaticSDConfig{TargetGroup{
-			Targets: ips,
+			Targets: targets,
 			Labels:  map[string]string{},
 		}}
 
