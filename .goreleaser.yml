@@ -1,0 +1,46 @@
+project_name: prometheus-sd-exoscale-instance-pools
+builds:
+  - id: prometheus-sd-exoscale-instance-pools
+    binary: prometheus-sd-exoscale-instance-pools
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}}
+    goos:
+      - windows
+      - darwin
+      - linux
+
+    goarch:
+      - amd64
+archives:
+  - id: windows
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - LICENSE
+dockers:
+  - goos: linux
+    goarch: amd64
+    binaries:
+      - prometheus-sd-exoscale-instance-pools
+    image_templates:
+      - "janoszen/prometheus-sd-exoscale-instance-pools:latest"
+      - "janoszen/prometheus-sd-exoscale-instance-pools:{{ .Major }}.{{ .Minor }}"
+      - "janoszen/prometheus-sd-exoscale-instance-pools:{{ .Tag }}"
+      - "docker.pkg.github.com/janoszen/prometheus-sd-exoscale-instance-pools/{{.ProjectName}}:latest"
+      - "docker.pkg.github.com/janoszen/prometheus-sd-exoscale-instance-pools/{{.ProjectName}}:{{ .Major }}.{{ .Minor }}"
+      - "docker.pkg.github.com/janoszen/prometheus-sd-exoscale-instance-pools/{{.ProjectName}}:{{ .Tag }}"
+    dockerfile: Dockerfile.goreleaser
+    builds:
+      - prometheus-sd-exoscale-instance-pools
+    extra_files:
+      - LICENSE
+    build_flag_templates:
+      - "--label=org.opencontainers.image.created={{.Date}}"
+      - "--label=org.opencontainers.image.name={{.ProjectName}}"
+      - "--label=org.opencontainers.image.revision={{.FullCommit}}"
+      - "--label=org.opencontainers.image.version={{.Version}}"
+      - "--label=org.opencontainers.image.licenses=Apache-2.0"
+release:

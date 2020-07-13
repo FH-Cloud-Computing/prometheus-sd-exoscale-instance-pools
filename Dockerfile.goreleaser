@@ -1,0 +1,8 @@
+FROM alpine
+COPY prometheus-sd-exoscale-instance-pools /
+COPY LICENSE /
+RUN mkdir -p /var/run/prometheus-sd-exoscale-instance-pools && chown 1022:1022 /var/run/prometheus-sd-exoscale-instance-pools
+ENTRYPOINT ["/prometheus-sd-exoscale-instance-pools"]
+CMD ["-h"]
+VOLUME "/var/run/prometheus-sd-exoscale-instance-pools"
+USER 1022:1022
