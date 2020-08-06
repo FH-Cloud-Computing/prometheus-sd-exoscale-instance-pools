@@ -3,10 +3,15 @@ github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/deepmap/oapi-codegen v1.3.7-0.20200311141508-ee90a3f9f1ae h1:TT7bfbLlmCLG3s0GRvqZr1ibJbZMpVNd6ko/bYjoDa4=
 github.com/deepmap/oapi-codegen v1.3.7-0.20200311141508-ee90a3f9f1ae/go.mod h1:sLdeQJus+YPkWVQaVp+jRr/7t/TP1PTi8QSD7H86AZw=
+github.com/deepmap/oapi-codegen v1.3.11 h1:Nd3tDQfqgquLmCzyRONHzs5SJEwPPoQcFZxT8MKt1Hs=
+github.com/deepmap/oapi-codegen v1.3.11/go.mod h1:suMvK7+rKlx3+tpa8ByptmvoXbAV70wERKTOGH3hLp0=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/exoscale/egoscale v0.27.0 h1:ifZJL/FqIX9+L26PgwOS+gkDxvq+XoDcfsi5gpv3UdY=
 github.com/exoscale/egoscale v0.27.0/go.mod h1:WThejIJgwf32NoUfOhIHIH7GfD6ZU4QK9mC1s8inIaU=
+github.com/exoscale/egoscale v0.28.1 h1:JPFbkrqw3RHWU7XPqwlpHn8IeZyY1CcO4XiFDPLflSY=
+github.com/exoscale/egoscale v0.28.1/go.mod h1:02Dek2pJ+CDS3HsWn7LboMfMtFAPkJXI18bZCG6kj+A=
 github.com/getkin/kin-openapi v0.2.0/go.mod h1:V1z9xl9oF5Wt7v32ne4FmiF1alpS4dM6mNzoywPOXlk=
+github.com/getkin/kin-openapi v0.13.0/go.mod h1:WGRs2ZMM1Q8LR1QBEwUxC6RJEfaBcD0s+pcEVXFuAjw=
 github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
 github.com/go-chi/chi v4.0.2+incompatible/go.mod h1:eB3wogJHnLi3x/kFX2A+IbTBlXxmMeXJVKy9tTv1XzQ=
 github.com/gofrs/uuid v3.2.0+incompatible h1:y12jRkkFxsd7GpqdSZ+/KCs/fJbqpEXSGd4+jfEaewE=
