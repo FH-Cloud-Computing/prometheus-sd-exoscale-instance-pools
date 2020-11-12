@@ -20,7 +20,7 @@ docker run \
     # Run the `exo instancepool list` command to get this value:
     --instance-pool-id ...
     # Provide the Prometheus service port
-    --port 9100
+    --prometheus-port 9100
 ```
 
 **Note:** This service discovery agent does NOT satisfy the Sprint 2 requirements because it writes the service discovery file to the wrong path. (`/var/run/prometheus-sd-exoscale-instance-pools` instead of `/srv/service-discovery`)
