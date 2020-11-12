@@ -23,3 +23,4 @@ docker run \
     --port 9100
 ```
 
+**Note:** This service discovery agent does NOT satisfy the Sprint 2 requirements because it writes the service discovery file to the wrong path. (`/var/run/prometheus-sd-exoscale-instance-pools` instead of `/srv/service-discovery`)
